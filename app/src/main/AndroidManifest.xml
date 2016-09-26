@@ -15,25 +15,32 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TouristAttraction"
+        <activity
+            android:name=".TouristAttraction"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="xyz.cybersapien.chandigarh.MainActivity"/>
+                android:value="xyz.cybersapien.chandigarh.MainActivity" />
         </activity>
-
-        <activity android:name=".Malls"
+        <activity
+            android:name=".Malls"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="xyz.cybersapien.chandigarh.MainActivity"/>
+                android:value="xyz.cybersapien.chandigarh.MainActivity" />
         </activity>
-
-        <activity android:name=".Restaurants"
+        <activity
+            android:name=".Restaurants"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="xyz.cybersapien.chandigarh.MainActivity"/>
+                android:value="xyz.cybersapien.chandigarh.MainActivity" />
+        </activity>
+        <activity android:name=".PlacesOfWorship"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="xyz.cybersapien.chandigarh.MainActivity" />
         </activity>
     </application>
 

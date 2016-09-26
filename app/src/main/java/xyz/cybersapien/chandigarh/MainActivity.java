@@ -28,10 +28,10 @@ public class MainActivity extends AppCompatActivity {
                 intent = new Intent(MainActivity.this, Restaurants.class);
                 startActivity(intent);
                 break;
-//            case R.id.places_worship:
-//                intent = new Intent(MainActivity.this, TouristAttraction.class);
-//                startActivity(intent);
-//                break;
+            case R.id.places_worship:
+                intent = new Intent(MainActivity.this, PlacesOfWorship.class);
+                startActivity(intent);
+                break;
         }
     }
 }
