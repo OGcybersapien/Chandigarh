@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Chandigarh</string>
+    <string name="tourist_attractions">Tourist Attractions</string>
+    <string name="malls_and_shopping">Malls and Shopping</string>
+    <string name="hotels_and_restaurants">Hotels and Restaurants</string>
+    <string name="places_of_worship">Places of Worship</string>
 </resources>

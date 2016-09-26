@@ -20,9 +20,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="PLACE NAME"
-        android:textSize="20sp"
+        android:textSize="24sp"
         android:id="@+id/placeName"
-        android:padding="5dp"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp"
         />
 
     <TextView
@@ -32,6 +33,7 @@
         android:id="@+id/placeAddress"
         android:drawableLeft="@drawable/ic_location_on"
         android:drawablePadding="10dp"
+        android:textSize="18sp"
         tools:text="St. 102, Sector 25\nChandigarh"/>
 
     <TextView
@@ -41,5 +43,6 @@
         tools:text="+91 7696 497298"
         android:drawableLeft="@drawable/ic_call"
         android:padding="5dp"
+        android:textSize="18sp"
         android:drawablePadding="10dp"/>
 </LinearLayout>
