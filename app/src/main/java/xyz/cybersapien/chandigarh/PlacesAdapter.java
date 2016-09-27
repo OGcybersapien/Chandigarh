@@ -1,9 +1,11 @@
 package xyz.cybersapien.chandigarh;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -16,14 +18,15 @@ import java.util.List;
  * getView Method.
  */
 
-public class PlacesAdapter extends ArrayAdapter<Place> {
+public class PlacesAdapter extends ArrayAdapter<Place>{
 
     public PlacesAdapter(Context context, List<Place> places){
         super(context, R.layout.list_item, places);
     }
 
+    @NonNull
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, View convertView, @NonNull ViewGroup parent) {
         View listView = convertView;
 
         //Inflate listView if listView is un-inflated
