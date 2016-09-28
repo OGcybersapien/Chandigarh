@@ -29,13 +29,11 @@ public class Malls extends AppCompatActivity {
 
         //Creating an ArrayList of Object Place with information like Place Name, Address and the Image Drawable Id
         final ArrayList<Place> places = new ArrayList<>();
-        places.add(new Place(getString(R.string.elante_mall), getString(R.string.elante_address),R.drawable.elante_mall));
-        places.add(new Place(getString(R.string.tdi_mall), getString(R.string.sector_17), R.drawable.tdi_mall));
-        places.add(new Place(getString(R.string.dlf_city_centre), getString(R.string.city_centre_address), R.drawable.dlf_city_centre));
-        places.add(new Place(getString(R.string.city_emporium), getString(R.string.city_emporium_address),R.drawable.city_emporium));
-        places.add(new Place(getString(R.string.city_plaza),getString(R.string.sector_17),R.drawable.sector_seventeen));
-        places.add(new Place(getString(R.string.north_country_mall),getString(R.string.ncm_address),R.drawable.ncm_mohali));
-        places.add(new Place(getString(R.string.paras_down_town),getString(R.string.paras_downtown_address),R.drawable.paras_downtown_square));
+        places.add(new Place(getString(R.string.elante_mall), getString(R.string.elante_address),getString(R.string.elante_mall_desc),R.drawable.elante_mall));
+        places.add(new Place(getString(R.string.tdi_mall), getString(R.string.sector_17),getString(R.string.tdi_mall_desc), R.drawable.tdi_mall));
+        places.add(new Place(getString(R.string.dlf_city_centre), getString(R.string.city_centre_address),getString(R.string.dlf_city_centre_desc), R.drawable.dlf_city_centre));
+        places.add(new Place(getString(R.string.city_plaza),getString(R.string.sector_17),getString(R.string.city_plaza_desc),R.drawable.sector_seventeen));
+        places.add(new Place(getString(R.string.north_country_mall),getString(R.string.ncm_address),getString(R.string.ncm_desc), R.drawable.ncm_mohali));
 
 
         //Creating a custom Array Adapter for this Malls ArrayList
@@ -60,21 +58,10 @@ public class Malls extends AppCompatActivity {
                 addressView.setText(places.get(position).getAddress());
 
                 TextView phoneView = (TextView) dialog.findViewById(R.id.dialog_contact_tel);
-                final String contact = places.get(position).getContactNumber();
-                if (!contact.equals(Place.NO_CONTACT_INFO)){
-                    phoneView.setText(contact);
-                    phoneView.setVisibility(View.VISIBLE);
-                    phoneView.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            final Intent callIntent = new Intent(Intent.ACTION_DIAL);
-                            callIntent.setData(Uri.parse("tel:" + contact));
-                            startActivity(callIntent);
-                        }
-                    });
-                } else {
-                    phoneView.setVisibility(View.GONE);
-                }
+                phoneView.setVisibility(View.GONE);
+
+                TextView placeDescription = (TextView) dialog.findViewById(R.id.dialog_desc);
+                placeDescription.setText(places.get(position).getPlaceDescription());
 
                 dialog.show();
             }

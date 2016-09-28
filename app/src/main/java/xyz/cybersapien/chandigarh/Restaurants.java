@@ -29,14 +29,13 @@ public class Restaurants extends AppCompatActivity {
         //The Place constructor here takes 4 input Parameters
         // Place Name, Place Address, Place Image and Official Contact number
         final ArrayList<Place> places = new ArrayList<>();
-        places.add(new Place(getString(R.string.barbeque_nation),getString(R.string.barbeque_address),R.drawable.barbeque_nation,getString(R.string.barbeque_call)));
-        places.add(new Place(getString(R.string.lalit_24_7),getString(R.string.lalit_address),R.drawable.the_lalit,getString(R.string.lalit_24_7_rest_tel)));
-        places.add(new Place(getString(R.string.saffron_marriott),getString(R.string.marriot_address),R.drawable.saffron_marriott,getString(R.string.saffron_marriott_tel)));
-        places.add(new Place(getString(R.string.gopals_35),getString(R.string.gopals_35_address),R.drawable.gopals,getString(R.string.gopals_tel)));
-        places.add(new Place(getString(R.string.pal_dhaba),getString(R.string.pal_address),R.drawable.pal_dhabba,getString(R.string.pal_dhaba_tel)));
-        places.add(new Place(getString(R.string.virgin_courtyard),getString(R.string.virgin_address),R.drawable.virgin_courtyard,getString(R.string.virgin_courtyard_tel)));
-        places.add(new Place(getString(R.string.pirates_of_grill),getString(R.string.pirates_address),R.drawable.pirates_of_grill,getString(R.string.pirates_of_grill_tel)));
-        places.add(new Place(getString(R.string.masala_grill),getString(R.string.masala_grill_address),R.drawable.masala_grill,getString(R.string.masala_grill_tel)));
+        places.add(new Place(getString(R.string.barbeque_nation),getString(R.string.barbeque_address),R.drawable.barbeque_nation,getString(R.string.barbeque_call),getString(R.string.barbeque_desc)));
+        places.add(new Place(getString(R.string.lalit_24_7),getString(R.string.lalit_address),R.drawable.the_lalit,getString(R.string.lalit_24_7_rest_tel),getString(R.string.lalit_24_7_desc)));
+        places.add(new Place(getString(R.string.saffron_marriott),getString(R.string.marriot_address),R.drawable.saffron_marriott,getString(R.string.saffron_marriott_tel),getString(R.string.saffron_desc)));
+        places.add(new Place(getString(R.string.gopals_35),getString(R.string.gopals_35_address),R.drawable.gopals,getString(R.string.gopals_tel),getString(R.string.gopals_desc)));
+        places.add(new Place(getString(R.string.pal_dhaba),getString(R.string.pal_address),R.drawable.pal_dhabba,getString(R.string.pal_dhaba_tel),getString(R.string.pal_dhaba_desc)));
+        places.add(new Place(getString(R.string.virgin_courtyard),getString(R.string.virgin_address),R.drawable.virgin_courtyard,getString(R.string.virgin_courtyard_tel),getString(R.string.virgin_courtyard_desc)));
+        places.add(new Place(getString(R.string.pirates_of_grill),getString(R.string.pirates_address),R.drawable.pirates_of_grill,getString(R.string.pirates_of_grill_tel),getString(R.string.pirates_of_grill_desc)));
 
         //Creating a PlacesAdapter for this Activity and the places ArrayList
         PlacesAdapter hotelAdapter = new PlacesAdapter(this, places);
@@ -62,7 +61,7 @@ public class Restaurants extends AppCompatActivity {
 
                 TextView phoneView = (TextView) dialog.findViewById(R.id.dialog_contact_tel);
 
-                if (!contact.equals(Place.NO_CONTACT_INFO)){
+                if (places.get(position).hasContactNumber()){
                     phoneView.setText(contact);
                     phoneView.setVisibility(View.VISIBLE);
                     phoneView.setOnClickListener(new View.OnClickListener() {
@@ -76,6 +75,9 @@ public class Restaurants extends AppCompatActivity {
                 } else {
                     phoneView.setVisibility(View.GONE);
                 }
+
+                TextView placeDescription = (TextView) dialog.findViewById(R.id.dialog_desc);
+                placeDescription.setText(places.get(position).getPlaceDescription());
 
                 dialog.show();
             }
